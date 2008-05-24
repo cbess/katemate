@@ -1,0 +1,16 @@
+Begin3
+Title:          KateMate -- Some description
+Version:        0.1
+Entered-date:   
+Description:    
+Keywords:       KDE Qt
+Author:         Christopher Bess <cbess@quantumquinn.com>
+Maintained-by:  Christopher Bess <cbess@quantumquinn.com>
+Home-page:      
+Alternate-site: 
+Primary-site:   ftp://ftp.kde.org/pub/kde/unstable/apps/utils
+                xxxxxx  katemate-0.1.tar.gz
+                xxx     katemate-0.1.lsm
+Platform:       Linux. Needs KDE
+Copying-policy: GPL
+End

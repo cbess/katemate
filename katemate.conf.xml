@@ -1,0 +1,22 @@
+<katemate date="3/23/2008" version="0.1">
+<!--    <snippet>
+        <name>test</name>
+        <triggertext>test</triggertext>
+        <contents></contents>
+        <types>global</types>
+    </snippet>
+-->
+	<snippet>
+        <name>test</name>
+        <triggertext>test</triggertext>
+        <contents><![CDATA[this 'test' expanded]]></contents>
+        <types>global</types>
+    </snippet>
+    
+    <snippet>
+        <name>newtest</name>
+        <triggertext>newtest</triggertext>
+        <contents><![CDATA[this 'newtest' expanded!]]></contents>
+        <types>global</types>
+    </snippet>
+</katemate>
