@@ -1,0 +1,12 @@
+<!DOCTYPE kpartgui>
+<kpartplugin name="katemate" library="libkatemateplugin" version="1">
+<MenuBar>
+ <Menu name="tools"><Text>&amp;Tools</Text>
+  <Action name="trigger_katemate"/>
+ </Menu>
+</MenuBar>
+<ToolBar name="KateMate">
+  <Action name="trigger_katemate"/>
+  <Action name="alt_trigger_katemate"/>
+</ToolBar>
+</kpartplugin>
