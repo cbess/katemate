@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=Kate/Plugin
+X-KDE-Library=libkatemateplugin
+X-Kate-Version=2.5
+Name=KateMate
+Comment=Bring TextMate power to Kate
+author=Christopher Bess, cbess@quantumquinn.com
