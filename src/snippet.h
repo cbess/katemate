@@ -20,7 +20,7 @@
 
 #include <qstring.h>
 #include <qmap.h>
-#include <qptrlist.h>
+#include <q3ptrlist.h>
 
 #if 0
 example snippet XML:
@@ -109,6 +109,6 @@ struct TabStop
 
 // create a snippet collection object
 typedef QMap<QString, Snippet> SnippetMap;
-typedef QPtrList<TabStop> TabStopList;
+typedef Q3PtrList<TabStop> TabStopList;
 
 #endif

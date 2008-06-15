@@ -37,6 +37,8 @@
 #include <qregexp.h>
 #include <qlayout.h>
 #include <qlineedit.h>
+//Added by qt3to4:
+#include <Q3VBoxLayout>
 
 #include "katematehelpers.h"
 #include <stdlib.h>
@@ -110,7 +112,7 @@ void KatePluginKateMate::addView(Kate::MainWindow *win)
                                                 0L,
                                                 QString("QuKateMate"));
         // add child widget  
-        QVBoxLayout* lo = new QVBoxLayout(mSnippetToolView, 0, 0, "katemate_config_layout");
+        Q3VBoxLayout* lo = new Q3VBoxLayout(mSnippetToolView, 0, 0, "katemate_config_layout");
         lo->setSpacing(KDialogBase::spacingHint()); 
         mSnippetConfigPage = new SnippetConfigPage(mSnippetToolView, "snippetconfigpage"); 
         lo->addWidget(mSnippetConfigPage);
@@ -486,7 +488,7 @@ void KatePluginKateMate::slotApplyConfig( KateMateConfigPage* p )
 KateMateConfigPage::KateMateConfigPage (QObject* parent /*= 0L*/, QWidget *parentWidget /*= 0L*/)
     : Kate::PluginConfigPage( parentWidget )
 {
-    QVBoxLayout* lo = new QVBoxLayout( this, 0, 0, "config_page_layout" );
+    Q3VBoxLayout* lo = new Q3VBoxLayout( this, 0, 0, "config_page_layout" );
     lo->setSpacing(KDialogBase::spacingHint());
 
     KateConfigPage *page = new KateConfigPage(this, "kateconfigpage", (KatePluginKateMate*)parent);

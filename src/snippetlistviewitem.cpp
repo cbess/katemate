@@ -21,13 +21,13 @@
 #include <qstring.h>
 #include "snippetlistviewitem.h"
 
-SnippetListViewItem::SnippetListViewItem(QListView* parent, const QString& label)
-    : QListViewItem(parent, label)
+SnippetListViewItem::SnippetListViewItem(Q3ListView* parent, const QString& label)
+    : Q3ListViewItem(parent, label)
 {
 }
 
-SnippetListViewItem::SnippetListViewItem(QListViewItem* parent, const QString& label)
-    : QListViewItem(parent, label)
+SnippetListViewItem::SnippetListViewItem(Q3ListViewItem* parent, const QString& label)
+    : Q3ListViewItem(parent, label)
 {
 }
 

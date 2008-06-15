@@ -54,7 +54,7 @@ void SnippetConfigPage::refreshSnippets()
     clearTextFields();
     
     // add the implied global snippet item
-    (void)new QListViewItem(lstSnippets, "Global");    
+    (void)new Q3ListViewItem(lstSnippets, "Global");    
     
     // iterate over every snippet
     SnippetMap *map = mSnippetProcessor->snippetCollection();
@@ -114,7 +114,7 @@ void SnippetConfigPage::createSnippet()
     snippet.types = txtTypes->text();
     snippet.name = name;
     
-    QListViewItem * item = addSnippetItem(snippet);
+    Q3ListViewItem * item = addSnippetItem(snippet);
     
     // show the newly added items
     if (item)
@@ -131,7 +131,7 @@ void SnippetConfigPage::createSnippet()
     }
 }
 
-QListViewItem * SnippetConfigPage::addSnippetItem(const Snippet& snippet)
+Q3ListViewItem * SnippetConfigPage::addSnippetItem(const Snippet& snippet)
 {
     if (snippet.types.isEmpty())
         return 0L;
@@ -142,13 +142,13 @@ QListViewItem * SnippetConfigPage::addSnippetItem(const Snippet& snippet)
         return 0L;
     
     // get the specified root item    
-    QListViewItem *rootItem = scopeRootItem(type);
+    Q3ListViewItem *rootItem = scopeRootItem(type);
     
     // if the type is not found
     if (rootItem == 0L)
     {
         // add the root item to the list
-        rootItem = new QListViewItem(lstSnippets, type.lower());
+        rootItem = new Q3ListViewItem(lstSnippets, type.lower());
         rootItem->setExpandable(true);
     }
     
@@ -170,7 +170,7 @@ void SnippetConfigPage::btDeleteSnippet_clicked()
     debug("delete snippet");
     
     // get the selected item
-    QListViewItem * sItem = lstSnippets->selectedItem();
+    Q3ListViewItem * sItem = lstSnippets->selectedItem();
     SnippetListViewItem *item = dynamic_cast<SnippetListViewItem*>(sItem);
     
     if (!item)
@@ -183,7 +183,7 @@ void SnippetConfigPage::btDeleteSnippet_clicked()
     QString type = primaryDocumentType(item->types());
     
     // get the associated root item
-    QListViewItem *rootItem = scopeRootItem(type);
+    Q3ListViewItem *rootItem = scopeRootItem(type);
     if (rootItem != 0L)
     {
         // highlight the root item
@@ -210,15 +210,15 @@ void SnippetConfigPage::btSaveSnippets_clicked()
     saveSnippets();
 }
 
-void SnippetConfigPage::lstSnippets_selectionChanged(QListViewItem* i)
+void SnippetConfigPage::lstSnippets_selectionChanged(Q3ListViewItem* i)
 {
 }
 
-void SnippetConfigPage::lstSnippets_clicked(QListViewItem* i)
+void SnippetConfigPage::lstSnippets_clicked(Q3ListViewItem* i)
 {
 }
 
-void SnippetConfigPage::lstSnippets_pressed(QListViewItem* i)
+void SnippetConfigPage::lstSnippets_pressed(Q3ListViewItem* i)
 {    
     SnippetListViewItem *item = dynamic_cast<SnippetListViewItem*>(i);
     
@@ -271,7 +271,7 @@ void SnippetConfigPage::lstSnippets_pressed(QListViewItem* i)
         mPrevItem = item;
 }
 
-void SnippetConfigPage::lstSnippets_mouseButtonPressed(int button, QListViewItem* i, const QPoint&, int)
+void SnippetConfigPage::lstSnippets_mouseButtonPressed(int button, Q3ListViewItem* i, const QPoint&, int)
 { // emitted after 'item_pressed'
     SnippetListViewItem *item = dynamic_cast<SnippetListViewItem*>(i);
     if (item)
@@ -289,7 +289,7 @@ void SnippetConfigPage::lstSnippets_mouseButtonPressed(int button, QListViewItem
     }
 }
 
-void SnippetConfigPage::lstSnippets_itemRenamed(QListViewItem* i,int,const QString& newName)
+void SnippetConfigPage::lstSnippets_itemRenamed(Q3ListViewItem* i,int,const QString& newName)
 {
     return;
     

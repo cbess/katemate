@@ -38,7 +38,10 @@
 #include <klibloader.h>
 #include <klocale.h>
 
-#include <qobjectlist.h> 
+#include <qobject.h> 
+//Added by qt3to4:
+#include <QPixmap>
+#include <Q3PtrList>
 
 class KateMateConfigPage;
 class SnippetProcessor;
@@ -185,7 +188,7 @@ private:
     void initConfigPage( KateMateConfigPage* );
 
 private:
-    QPtrList<class PluginView> m_views;
+    Q3PtrList<class PluginView> m_views;
 };
 
 

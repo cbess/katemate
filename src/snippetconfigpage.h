@@ -23,7 +23,7 @@
 #include "SnippetConfigWidget.h"
 #include <qlineedit.h>
 #include <ktextedit.h>
-#include <qlistview.h>
+#include <q3listview.h>
 
 /* Inherited members:
  *
@@ -89,7 +89,7 @@ class SnippetConfigPage: public SnippetConfigWidget
         /**
          * Adds the specifed snippet to the snippet list view.
          */
-        QListViewItem * addSnippetItem(const Snippet& snippet);
+        Q3ListViewItem * addSnippetItem(const Snippet& snippet);
         /**
          * Gets the current snippet processor.
          * @return current snippet processor instance
@@ -123,7 +123,7 @@ class SnippetConfigPage: public SnippetConfigWidget
         /**
          * Gets the scope list item instance (ex: global)
          */
-        inline QListViewItem * scopeRootItem(const QString& type)
+        inline Q3ListViewItem * scopeRootItem(const QString& type)
         { return lstSnippets->findItem(type, 0, ExactMatch); }
         
         /**
@@ -133,16 +133,16 @@ class SnippetConfigPage: public SnippetConfigWidget
         bool snippetExists(const QString& triggerText);
         
 public slots:
-    virtual void lstSnippets_itemRenamed(QListViewItem*, int, const QString&);
-    virtual void lstSnippets_selectionChanged(QListViewItem*);
+    virtual void lstSnippets_itemRenamed(Q3ListViewItem*, int, const QString&);
+    virtual void lstSnippets_selectionChanged(Q3ListViewItem*);
 public slots:
     virtual void btNewSnippet_clicked();
 public slots:
     virtual void btSaveSnippets_clicked();
     virtual void btDeleteSnippet_clicked();
-    virtual void lstSnippets_clicked(QListViewItem*);
-    virtual void lstSnippets_pressed(QListViewItem*);
-    virtual void lstSnippets_mouseButtonPressed(int,QListViewItem*,const QPoint&,int);
+    virtual void lstSnippets_clicked(Q3ListViewItem*);
+    virtual void lstSnippets_pressed(Q3ListViewItem*);
+    virtual void lstSnippets_mouseButtonPressed(int,Q3ListViewItem*,const QPoint&,int);
 };
 
 #endif
