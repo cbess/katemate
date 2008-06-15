@@ -31,7 +31,7 @@
 #include <qstringlist.h>
 #include <stdlib.h>
 #include <qfile.h>
-#include <qtextstream.h>
+#include <q3textstream.h>
 
 SnippetProcessor::SnippetProcessor()
 {
@@ -97,7 +97,7 @@ QString SnippetProcessor::processText(TriggerObject& obj)
     QStringList lines = QStringList::split('\n', newText);
     
     // iterate over all the tab stops
-    QPtrListIterator<TabStop> it(*mTabStopList);
+    Q3PtrListIterator<TabStop> it(*mTabStopList);
     TabStop *tabstop;
     while ( (tabstop = it.current()) != 0L ) 
     {        
@@ -186,7 +186,7 @@ bool SnippetProcessor::updateTabStopPositions(int newLine, int newColumn)
     tabStopLineDepth = newLine - curStopLine; // the number of lines the current edit spans
     
     // iterate over all the tab stops
-    QPtrListIterator<TabStop> it(*mTabStopList);
+    Q3PtrListIterator<TabStop> it(*mTabStopList);
     TabStop *tabstop;
     while ((tabstop = it.current()) != 0L) 
     {
@@ -235,8 +235,8 @@ bool SnippetProcessor::saveSnippets(const QString& path)
     QFile file(path);
     if (QFile::exists(path))
         QFile::remove(path);
-    file.open(IO_WriteOnly | IO_Append);
-    QTextStream stream(&file);
+    file.open(QIODevice::WriteOnly | QIODevice::Append);
+    Q3TextStream stream(&file);
     
     // write the header
     stream << "<katemate version=\"0.1\">\n";

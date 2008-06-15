@@ -18,14 +18,14 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include <qlistview.h>
+#include <q3listview.h>
 
 class QString;
 
 /**
  * Represents the snippet as a list view item.
  */
-class SnippetListViewItem : public QListViewItem 
+class SnippetListViewItem : public Q3ListViewItem 
 {
     private:
         QString mContents;
@@ -33,8 +33,8 @@ class SnippetListViewItem : public QListViewItem
         QString mTypes;
         
     public:
-        SnippetListViewItem(QListView* parent, const QString& label);
-        SnippetListViewItem(QListViewItem* parent, const QString& name);
+        SnippetListViewItem(Q3ListView* parent, const QString& label);
+        SnippetListViewItem(Q3ListViewItem* parent, const QString& name);
         
         /**
          * Sets the contents (the expanded text)
@@ -71,5 +71,5 @@ class SnippetListViewItem : public QListViewItem
         { this->setText(0, name); }
         
         inline QString text(int col=0)
-        { return this->QListViewItem::text(col); }
+        { return this->Q3ListViewItem::text(col); }
 };

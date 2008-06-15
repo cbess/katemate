@@ -41,7 +41,7 @@ bool KateMateXml::LoadFile(const QString& filePath )
     mXmlDocument = new QDomDocument("katematexml");
     QFile file(filePath);
     
-    if ( !file.open(IO_ReadOnly) )
+    if ( !file.open(QIODevice::ReadOnly) )
         return false;
     
     if ( !mXmlDocument->setContent(&file) ) 
